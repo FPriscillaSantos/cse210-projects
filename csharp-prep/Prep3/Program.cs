@@ -7,11 +7,11 @@ class Program
         Console.WriteLine("Hello Prep3 World!");
         Console.WriteLine("3. C# Prep 3—Loops");
 
-        Console.Write("Choose a number:  ");
+        Console.Write("What is the magic number? ");
         string userInput = Console.ReadLine();
         int number = int.Parse(userInput);
 
-        Console.Write("Guess the number:  ");
+        Console.Write("What is your guess? ");
         string userInput2 = Console.ReadLine();
         int guessNumber = int.Parse(userInput2);
 
@@ -25,7 +25,7 @@ class Program
         }
         else if (guessNumber == number)
         {
-            Console.WriteLine("Correct!");
+            Console.WriteLine("You guessed it!");
         }
     }
 }
