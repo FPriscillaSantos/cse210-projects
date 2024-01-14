@@ -4,7 +4,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello World! This is Develop02!");
+        Console.WriteLine("Hello World! This is Develop02 - Week 1!");
+        Console.WriteLine("1. C# Prep 1—Variables, Input, and Output:");
 
         Console.Write("What is your first name? ");
         string firstName = Console.ReadLine();
@@ -13,5 +14,6 @@ class Program
         string lastName = Console.ReadLine();
 
         Console.WriteLine($"Your name is {lastName}, {firstName} {lastName}");
+
     }
 }
