@@ -1,4 +1,6 @@
 using System.IO;
+using System;
+using System.Collections.Generic;
 public class Entry
 {
     public string _date;
@@ -12,16 +14,4 @@ public class Entry
         Console.WriteLine($"Entry: {_entryText}");
     }
 
-     public void SaveToCsv(string filePath)
-    {
-       
-
-            using (StreamWriter _newEntry = new StreamWriter(filePath,true))
-            {
-                
-            _newEntry.WriteLine("Date,Prompt,Entry");
-                
-            _newEntry.WriteLine($"{_date},{_promptText},{_entryText}");
-            }
-    }
 }
