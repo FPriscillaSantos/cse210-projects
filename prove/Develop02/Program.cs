@@ -10,7 +10,7 @@ class Program
         int option = 0;
 
         PromptGenerator promptGenerator = new PromptGenerator();
-        List<Entry> entries = new List<Entry>();
+        Journal journal = new Journal();
 
         while (option != 5)
         {
@@ -25,18 +25,18 @@ class Program
                 string dateText = theCurrentTime.ToShortDateString();
                 newEntry._date = dateText;
 
-                entries.Add(newEntry);
+                journal.AddEntry(newEntry);
 
             }
             
             else if (option == 2)
             {
-                DisplayEntries(entries);
+                journal.DisplayAll();
             }
 
             else if (option == 4)
             {
-                SaveToFile(entries);
+                journal.SaveToFile();
             }
 
             Console.WriteLine("\r\nPlease select one of the following choices: \r\n 1. Write \r\n 2. Display \r\n 3. Load\r\n 4. Save \r\n 5. Quit \r\n What would you like to do?");
@@ -44,26 +44,7 @@ class Program
             option = int.Parse(userInput);
         }
     }
-    public static void DisplayEntries(List<Entry> records)
-    {
-        foreach (Entry record in records)
-        {
-            Console.WriteLine($"Date: {record._date} - Prompt: {record._promptText} \r\n{record._entryText}");
-        }
-    }
-
-    public static void SaveToFile(List<Entry> records)
-    {
-        string filename = "record.txt";
-
-        using (StreamWriter _newEntry = new StreamWriter(filename, true))
-        {
-            foreach (Entry record in records)
-            {
-                _newEntry.WriteLine($"Date: {record._date} - Prompt: {record._promptText} Entry: {record._entryText}");
-            }
-        }
-    }
+        
 }
 
 
