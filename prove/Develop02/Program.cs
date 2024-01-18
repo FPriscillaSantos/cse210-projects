@@ -48,7 +48,7 @@ class Program
     {
         foreach (Entry record in records)
         {
-            Console.WriteLine($"Date: {record._date} - Prompt: {record._promptText} Entry: {record._entryText}");
+            Console.WriteLine($"Date: {record._date} - Prompt: {record._promptText} \r\n{record._entryText}");
         }
     }
 
