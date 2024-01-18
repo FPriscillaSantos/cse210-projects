@@ -25,16 +25,23 @@ public class Journal
 
     public void SaveToFile()
     {
-        string filename = "record.txt";
-
-        using (StreamWriter writer = new StreamWriter(filename, true))
+    try
         {
-            foreach (Entry record in _entries)
+            string filePath = @"C:\Users\fabia\OneDrive\Área de Trabalho\BYU\CSE 210 Programming With Classes\cse210-projects\prove\Develop02\record.txt";
+            using (StreamWriter writer = new StreamWriter(filePath, true))
             {
-                writer.WriteLine($"Date: {record._date} - Prompt: {record._promptText}\r\n{record._entryText}\r\n");
+                foreach (Entry record in _entries)
+                {
+                    writer.WriteLine($"Date: {record._date} - Prompt: {record._promptText}\r\n{record._entryText}\r\n");
+                }
             }
+            Console.WriteLine("File saved successfully.");
         }
-    }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error saving file: {ex.Message}");
+        }
+}
 
     public void LoadFromFile(string file)
     {
