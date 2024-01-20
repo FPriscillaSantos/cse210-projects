@@ -27,7 +27,6 @@ public class Journal
     {
         try
         {
-            // Use Path.Combine para criar o caminho do arquivo
             string filePath = Path.Combine(@"C:\Users\fabia\OneDrive\Área de Trabalho\BYU\CSE 210 Programming With Classes\cse210-projects\prove\Develop02\", $"{filename}.txt");
 
             using (StreamWriter writer = new StreamWriter(filePath, true))
@@ -58,7 +57,6 @@ public class Journal
                 {
                     string line = reader.ReadLine();
 
-                    // Divide a linha usando o separador "-"
                     string[] parts = line.Split(new[] { "-" }, StringSplitOptions.RemoveEmptyEntries);
 
                     if (parts.Length >= 3)
