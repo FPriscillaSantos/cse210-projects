@@ -34,9 +34,25 @@ class Program
                 journal.DisplayAll();
             }
 
+            else if (option == 3)
+            {
+                Console.WriteLine("What is the filename?");
+                string filename = Console.ReadLine();
+                journal.LoadFromFile(filename);
+            }
+
             else if (option == 4)
             {
-                journal.SaveToFile();
+                Console.WriteLine("What is the filename?");
+                string filename = Console.ReadLine();
+
+                 foreach (char invalidChar in Path.GetInvalidFileNameChars())
+                {
+                    filename = filename.Replace(invalidChar.ToString(), "");
+                }
+
+                journal.SaveToFile(filename);
+
             }
 
             else if (option !=1 && option !=2 && option !=3 && option !=4 && option !=5)
