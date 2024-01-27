@@ -6,14 +6,12 @@ public class Scripture
     private Reference _reference;
     private List<Word> _words;
 
-    // Construtor para uma única passagem bíblica
     public Scripture(string book, int chapter, int verse, string text)
     {
         _reference = new Reference(book, chapter, verse);
         _words = text.Split(' ').Select(word => new Word(word)).ToList();
     }
 
-    // Construtor para uma passagem bíblica com intervalo de versículos
     public Scripture(string book, int chapter, int startVerse, int endVerse, string text)
     {
         _reference = new Reference(book, chapter, startVerse, endVerse);
@@ -23,7 +21,7 @@ public class Scripture
     public void HideRandomWords()
     {
         Random random = new Random();
-        int wordsToHide = random.Next(1, _words.Count); // Oculta até metade das palavras
+        int wordsToHide = random.Next(1, _words.Count);
 
         for (int i = 0; i < wordsToHide; i++)
         {

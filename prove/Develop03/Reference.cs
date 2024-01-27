@@ -8,16 +8,14 @@ public class Reference
     private int _startVerse;
     private int _endVerse;
 
-    // Constructor for a single verse
     public Reference(string book, int chapter, int startVerse)
     {
         _book = book;
         _chapter = chapter;
         _startVerse = startVerse;
-        _endVerse = startVerse; // Set endVerse to startVerse by default
+        _endVerse = startVerse;
     }
 
-    // Constructor for a verse range
     public Reference(string book, int chapter, int startVerse, int endVerse)
     {
         _book = book;
