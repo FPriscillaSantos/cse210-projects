@@ -6,18 +6,18 @@ class Program
     static void Main(string[] args)
     {
         RandomScriptures randomScriptures = new RandomScriptures();
-
-        // Loop principal do programa
-        while (true)
-        {
-            Console.Clear(); // Limpa a tela do console
+        Console.Clear(); // Limpa a tela do console
 
             // Seleciona uma escritura aleatória
             Scripture scripture = randomScriptures.GetRandomScripture();
 
+            
+        // Loop principal do programa
+        while (true)
+        {
             // Exibe a escritura selecionada
             Console.WriteLine(scripture.GetDisplayText());
-
+            
             // Prompt para continuar ou encerrar o programa
             Console.WriteLine("\nPressione Enter para continuar ou digite 'quit' para sair.");
             string userInput = Console.ReadLine();
