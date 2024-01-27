@@ -1,3 +1,4 @@
+//I chose to select random scriptures to present to the user.
 using System;
 using System.Collections.Generic;
 using System.Linq;
