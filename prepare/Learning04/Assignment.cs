@@ -15,6 +15,6 @@ public class Assignment
 
     public void GetSummary()
     {
-        Console.WriteLine($"Name: {_studentName} - {_topic}");
+        Console.WriteLine($"{_studentName} - {_topic}");
     }
 }
