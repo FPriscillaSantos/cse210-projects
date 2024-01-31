@@ -18,5 +18,13 @@ class Program
 
         assignment2.GetSummary();
         assignment2.GetHomeworkList();
+
+        WritingAssignment assignment3 = new WritingAssignment();
+        assignment3.SetStudentName("Mary Waters");
+        assignment3.SetTopic("European History");
+        assignment3.SetTitle("The Causes of World War II by Mary Waters");
+
+        assignment3.GetSummary();
+        assignment3.GetWritingInformation();
     }
 }
