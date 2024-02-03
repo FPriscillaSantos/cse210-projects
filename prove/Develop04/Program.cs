@@ -1,4 +1,5 @@
 using System;
+using System.Threading;
 
 class Program
 {
@@ -12,8 +13,14 @@ class Program
         if (_userOption == 1)
         {
             Console.Clear();
-            Console.Write("Welcome to the Breathing Activity. \r\n \r\nThis activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing. \r\nHow long, in seconds, would you like for your session? ");
+            Console.Write("Welcome to the Breathing Activity. \r\n \r\nThis activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing. \r\n\r\nHow long, in seconds, would you like for your session? ");
             int _seconds = Convert.ToInt32(Console.ReadLine());
+            Console.Clear();
+            Console.WriteLine("Get ready...");
+            Loading.SpinnerEffect(_seconds);
+            Loading.TwistedEffect(_seconds);
+
+
         }
 
         else if (_userOption == 2)
