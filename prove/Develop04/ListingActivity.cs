@@ -34,7 +34,7 @@ public class ListingActivity : Activity
         {
             for (int i = 1; i <= _duration; i++)
             {
-                Console.Write($"> {i}");
+                Console.Write($"> ");
                 string item = Console.ReadLine();
                 _count = _count + 1;
             }
