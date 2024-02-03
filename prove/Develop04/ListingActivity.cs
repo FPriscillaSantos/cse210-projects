@@ -2,30 +2,39 @@ using System;
 using System.Threading;
 using Microsoft.VisualBasic;
 
-public class ListeningActivity : Activity
-
+public class ListingActivity : Activity
 {
-    private int _count;
-    private List<string> _prompts;
-
-    public void ListingActivity(string _name, string _description, int _duration, int _count, List<Strings> _prompts)
+    private List<string> _prompts = new List<string>
     {
-        _name = "Welcome to the Listing Activity";
-        _description = "\r\n \r\nThis activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area. \r\nHow long, in seconds, would you like for your session? ";
+        "Who are people that you appreciate?",
+        "What are personal strengths of yours?",
+        "Who are people that you have helped this week?",
+        "When have you felt the Holy Ghost this month?",
+        "Who are some of your personal heroes?"
+    };
 
-        Console.Clear();
-        Console.WriteLine($"{_name}{_description}");
-        int _seconds = Convert.ToInt32(Console.ReadLine());
-        _duration = _seconds;
+    private Random _random = new Random();
 
-        Console.Clear();
-        Console.WriteLine("Get ready...");
-        Loading.SpinnerEffect(4);
-        
-        //funcionamento aqui
+    public ListingActivity() : base("Listing Activity", "\r\n\r\nThis activity will help you reflect on the good things in your life by listing as many positive aspects as you can.\r\n\r\n")
+    {
+    }
 
-        Console.WriteLine("Well done!!");
-        Loading.TwistedEffect(4);
+    public void Start()
+    {
+        DisplayStartingMessage();
+        string prompt = _prompts[_random.Next(_prompts.Count)];
+        Console.WriteLine($"Prompt: {prompt}");
+        Console.WriteLine("Let's start listing...");
+        Thread.Sleep(2000); // Pause por 2 segundos antes de começar a listagem
+        Console.WriteLine("Enter your items:");
+        for (int i = 1; i <= _duration; i++)
+        {
+            Console.Write($"Item {i}: ");
+            string item = Console.ReadLine();
+            // Aqui você poderia armazenar os itens em uma lista, banco de dados, etc.
+        }
+        Console.WriteLine($"You've listed {_duration} items.");
 
+        DisplayEndingMessage();
     }
 }

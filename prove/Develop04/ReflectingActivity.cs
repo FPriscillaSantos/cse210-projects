@@ -1,28 +1,60 @@
 using System;
 using System.Threading;
+using Microsoft.VisualBasic;
+
+
 public class ReflectingActivity : Activity
 {
-    private List<string> _prompts;
-    private List<string> _questions;
-
-    public void ListingActivity(string _name, string _description, int _duration, List<string> _prompts, List<string> _questions)
+    private List<string> _prompts = new List<string>
     {
-        _name = "Welcome to the Reflecting Activity";
-        _description = "\r\n \r\nThis activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life. \r\n\r\nHow long, in seconds, would you like for your session? ";
+        "Think of a time when you stood up for someone else.",
+        "Think of a time when you did something really difficult.",
+        "Think of a time when you helped someone in need.",
+        "Think of a time when you did something truly selfless."
+    };
 
-        Console.Clear();
-        Console.WriteLine($"{_name}{_description}");
-        int _seconds = Convert.ToInt32(Console.ReadLine());
-        _duration = _seconds;
+    private Random _random = new Random();
 
-        Console.Clear();
-        Console.WriteLine("Get ready...");
-        Loading.SpinnerEffect(4);
-        
-        //funcionamento aqui
+    public ReflectingActivity() : base("Reflecting Activity", "\r\n\r\nThis activity will help you reflect on times in your life when you have shown strength and resilience.\r\n")
+    {
+    }
 
-        Console.WriteLine("Well done!!");
-        Loading.TwistedEffect(4);
+    public void Start()
+    {
+        DisplayStartingMessage();
+        string prompt = _prompts[_random.Next(_prompts.Count)];
+        Console.WriteLine($" --- {prompt} ---");
+        Console.WriteLine("When you have something in mind, press enter to continue.");
+        while (Console.ReadKey().Key != ConsoleKey.Enter) { }
+        Console.WriteLine("Now ponder on each of the following questions as they related to this experience. \r\nYou may begin in:");
+        ShowCountdown(5);
+        DateTime startTime = DateTime.Now;
 
+        while ((DateTime.Now - startTime).TotalSeconds < _duration)
+        {
+            for (int i = 0; i < _duration; i++)
+            {
+                string question = GetRandomQuestion();
+                Console.WriteLine($"> {question}");
+                SpinnerEffect(8);
+            }
+            DisplayEndingMessage();
+        }
+    }
+
+    private string GetRandomQuestion()
+    {
+        string[] questions = {
+            "Why was this experience meaningful to you?",
+            "Have you ever done anything like this before?",
+            "How did you get started?",
+            "How did you feel when it was complete?",
+            "What made this time different than other times when you were not as successful?",
+            "What is your favorite thing about this experience?",
+            "What could you learn from this experience that applies to other situations?",
+            "What did you learn about yourself through this experience?",
+            "How can you keep this experience in mind in the future?"
+        };
+        return questions[_random.Next(questions.Length)];
     }
 }

@@ -15,22 +15,22 @@ class Program
         
             if (_userOption == 1)
             {         
-                //BreathingActivity();
+                new BreathingActivity().Start();
             }
 
             else if (_userOption == 2)
             {
-                //ReflectingActivity();
+                new ReflectingActivity().Start();
             }
 
             else if (_userOption == 3)
             {
-                ////ListingActivity();
+                new ListingActivity().Start();
             }
 
-            else if (_userOption !=1 && _userOption !=2 && _userOption !=3 && _userOption !=4)
+            else if (_userOption ==4)
             {
-                Console.Write("Invalid option");
+                break;
             }
         }
 
