@@ -15,7 +15,7 @@ public class ListingActivity : Activity
 
     private Random _random = new Random();
 
-    public ListingActivity() : base("Listing Activity", "\r\n\r\nThis activity will help you reflect on the good things in your life by listing as many positive aspects as you can.\r\n\r\n")
+    public ListingActivity() : base("Listing Activity", "\r\n\r\nThis activity will help you reflect on the good things in your life by listing as many positive aspects as you can.\r\n")
     {
     }
 
@@ -23,17 +23,23 @@ public class ListingActivity : Activity
     {
         DisplayStartingMessage();
         string prompt = _prompts[_random.Next(_prompts.Count)];
-        Console.WriteLine($"Prompt: {prompt}");
-        Console.WriteLine("Let's start listing...");
-        Thread.Sleep(2000); // Pause por 2 segundos antes de começar a listagem
-        Console.WriteLine("Enter your items:");
-        for (int i = 1; i <= _duration; i++)
+        Console.WriteLine("List as many responses you can to the following prompt:");
+        Console.WriteLine($" --- {prompt} ---");
+        Console.WriteLine("You may begin in:");
+        ShowCountdown(5);
+        int _count = 0;
+        DateTime startTime = DateTime.Now;
+
+        while ((DateTime.Now - startTime).TotalSeconds < _duration)
         {
-            Console.Write($"Item {i}: ");
-            string item = Console.ReadLine();
-            // Aqui você poderia armazenar os itens em uma lista, banco de dados, etc.
+            for (int i = 1; i <= _duration; i++)
+            {
+                Console.Write($"> {i}");
+                string item = Console.ReadLine();
+                _count = _count + 1;
+            }
         }
-        Console.WriteLine($"You've listed {_duration} items.");
+        Console.WriteLine($"You listed {_count} items.");
 
         DisplayEndingMessage();
     }
