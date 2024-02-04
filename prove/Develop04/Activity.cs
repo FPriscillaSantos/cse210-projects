@@ -30,7 +30,7 @@ public class Activity
     {
         Console.Clear();
         Console.WriteLine($"Welcome to the {_name}.{_description}");
-        Console.WriteLine("How long, in seconds, would you like for your session? ");
+        Console.Write("How long, in seconds, would you like for your session? ");
         _duration = Convert.ToInt32(Console.ReadLine());
         Console.Clear();
         Console.WriteLine("Get ready...");
@@ -77,10 +77,11 @@ public class Activity
     {
         for (int i = durationInSeconds; i > 0; i--)
         {
-            Console.Write($"\r\n{new string(' ', Console.WindowWidth - 1)}"); // Limpa a linha
-            Console.Write($"\r {i} seconds"); // Imprime o próximo número
+            Console.Write($"{i}"); 
             Thread.Sleep(1000);
+            Console.Write("\b \b");
         }
         Console.WriteLine(); 
     }   
+    
 }

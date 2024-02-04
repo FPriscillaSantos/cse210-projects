@@ -32,12 +32,10 @@ public class ReflectingActivity : Activity
 
         while ((DateTime.Now - startTime).TotalSeconds < _duration)
         {
-            for (int i = 0; i < _duration; i++)
-            {
-                string question = GetRandomQuestion();
-                Console.WriteLine($"> {question}");
-                SpinnerEffect(8);
-            }
+            string question = GetRandomQuestion();
+            Console.WriteLine($"> {question}");
+            SpinnerEffect(8);
+            
             DisplayEndingMessage();
         }
     }

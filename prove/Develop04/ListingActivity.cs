@@ -32,13 +32,11 @@ public class ListingActivity : Activity
 
         while ((DateTime.Now - startTime).TotalSeconds < _duration)
         {
-            for (int i = 1; i <= _duration; i++)
-            {
-                Console.Write($"> ");
-                string item = Console.ReadLine();
-                _count = _count + 1;
-            }
+            Console.Write($"> ");
+            string item = Console.ReadLine();
+            _count = _count + 1;
         }
+        
         Console.WriteLine($"You listed {_count} items.");
 
         DisplayEndingMessage();
