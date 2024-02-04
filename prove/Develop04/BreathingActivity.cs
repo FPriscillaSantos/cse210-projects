@@ -1,3 +1,5 @@
+//how many times activities were performed.
+//Added another animation (TwistedEffec)
 public class BreathingActivity : Activity
 {
     public BreathingActivity() : base("Breathing Activity",

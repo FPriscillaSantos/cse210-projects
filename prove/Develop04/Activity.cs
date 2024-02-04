@@ -1,3 +1,5 @@
+//how many times activities were performed.
+//Added another animation (TwistedEffec)
 using System;
 using System.Threading;
 using System.Collections.Generic;
