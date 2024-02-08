@@ -20,6 +20,11 @@ public class ChecklistGoal : Goal
         return _isComplete;
     }
 
+    public string GetDetailString()
+    {
+        return $"{_shortName}: {_description} - {_points} points"; //falta coisa
+    }
+
     public string GetStringRepresentation()
     {
         return $"{_shortName}: {_description} - {_points} points"; //falta coisa

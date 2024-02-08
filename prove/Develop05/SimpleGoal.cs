@@ -7,17 +7,17 @@ public class SimpleGoal : Goal
         _isComplete = false;
     }
 
-    public void RecordEvent()
+    public override void RecordEvent()
     {
         
     }
 
-    public bool IsComplete()
+    public override bool IsComplete()
     {
         return _isComplete;
     }
 
-    public string GetStringRepresentation()
+    public override string GetStringRepresentation()
     {
         return $"{_shortName}: {_description} - {_points} points";
     }
