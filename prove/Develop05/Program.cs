@@ -21,5 +21,10 @@ class Program
         Console.Write("What is the amount of point associated with this goal? ");
         string _amountPoints = Console.ReadLine();
         int amountPoints = int.Parse(_amountPoints);
+
+        if (menuChoice == "1")
+        {
+            //CreateGoal();
+        }
     }
 }
