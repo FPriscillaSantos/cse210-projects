@@ -1,24 +1,21 @@
 public class EternalGoal : Goal
 {
-    private bool _isComplete;
-
-    public EternalGoal(string shortName, string description, string points) : base(shortName, description, points)
+    public EternalGoal(string shortName, string description, int points) : base(shortName, description, points)
     {
-        _isComplete = false; 
     }
 
-    public void RecordEvent()
+    public override void RecordEvent()
     {
-        
+      Console.WriteLine($"Event recorded for eternal goal '{_shortName}'!");
     }
 
-    public bool IsComplete()
+    public override bool IsComplete()
     {
-        return _isComplete;
+        return false;
     }
 
-    public string GetStringRepresentation()
+    public override string GetStringRepresentation()
     {
-        return $"{_shortName}: {_description} - {_points} points"; //falta coisa
+        return $"EternalGoal|{_shortName}|{_description}|{_points}"; //falta coisa
     }
 }

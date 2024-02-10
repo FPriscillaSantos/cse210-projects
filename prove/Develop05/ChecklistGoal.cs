@@ -1,32 +1,41 @@
-public class ChecklistGoal : Goal
+public class ChecklistGoal : Goal 
 {
-    private int _amountComplete;
+    private int _amountCompleted;
     private int _target;
     private int _bonus;
-    private bool _isComplete;
-    
-    public ChecklistGoal(string shortName, string description, string points) : base(shortName, description, points)
+
+    public ChecklistGoal(string shortName, string description, int points, int target, int bonus) : base(shortName, description, points) 
     {
-        _isComplete = false; 
+        _amountCompleted = 0;
+        _target = target;
+        _bonus = bonus;
     }
 
-    public void RecordEvent()
+    public override void RecordEvent() 
     {
-        
+        if (_amountCompleted < _target) {
+            _amountCompleted++;
+            Console.WriteLine($"Goal '{_shortName}' recorded event {_amountCompleted}/{_target}!");
+            if (_amountCompleted == _target) {
+                Console.WriteLine($"Congratulations! Goal '{_shortName}' completed with bonus {_bonus} points!");
+            }
+        } else {
+            Console.WriteLine($"Goal '{_shortName}' has already been completed.");
+        }
     }
 
-    public bool IsComplete()
+    public override bool IsComplete() 
     {
-        return _isComplete;
+        return _amountCompleted >= _target;
     }
 
-    public string GetDetailString()
+    public override string GetDetailsString() 
     {
-        return $"{_shortName}: {_description} - {_points} points"; //falta coisa
+        return $"{base.GetDetailsString()} ({_amountCompleted}/{_target} completed)";
     }
 
-    public string GetStringRepresentation()
+    public override string GetStringRepresentation() 
     {
-        return $"{_shortName}: {_description} - {_points} points"; //falta coisa
+        return $"ChecklistGoal|{_shortName}|{_description}|{_points}|{_amountCompleted}|{_target}|{_bonus}";
     }
 }
