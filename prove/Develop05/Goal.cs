@@ -20,7 +20,7 @@ public class Goal
         return false;
     }
 
-    public virtual string GetDetailString()
+    public virtual string GetDetailsString()
     {
         return $"{_shortName}: {_description} - {_points} points"; //falta coisa
     }
