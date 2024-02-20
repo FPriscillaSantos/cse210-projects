@@ -6,7 +6,19 @@ class Lectures : Event
     public Lectures(string title, string description, DateTime date, DateTime time, Address address) 
         : base(title, description, date, time, address)
     {
-        
+        type = "Lectures";
+    }
+
+    public string SpeakerName
+    {
+        get { return _speakerName; }
+        set { _speakerName = value; }
+    }
+
+    public string Capacity
+    {
+        get { return _capacity; }
+        set { _capacity = value; }
     }
 
     public override void DisplayFullDetails() 

@@ -5,7 +5,7 @@ class OutdoorGatherings : Event
         public OutdoorGatherings(string title, string description, DateTime date, DateTime time, Address address) 
         : base(title, description, date, time, address)
     {
-        
+        type = "Outdoor Gatherings";
     }
 
     public override void DisplayFullDetails() 

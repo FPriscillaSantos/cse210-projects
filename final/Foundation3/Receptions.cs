@@ -5,7 +5,7 @@ class Receptions : Event
     public Receptions(string title, string description, DateTime date, DateTime time, Address address) 
         : base(title, description, date, time, address)
     {
-        
+        type = "Receptions";
     }
 
     public override void DisplayFullDetails() 

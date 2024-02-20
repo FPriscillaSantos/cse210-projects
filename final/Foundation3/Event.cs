@@ -7,6 +7,7 @@ class Event
     protected DateTime _time;
     protected DateTime _date;
     protected Address _address;
+    protected string type;
 
     public Event(string title, string description, DateTime date, DateTime time, Address address)
     {
@@ -28,6 +29,6 @@ class Event
 
     public string DisplayShortDescription()
     {
-        return $"{_title}, {_date}";
+        return $"{_title}, {_date} \r\n{type}";
     }
 }
