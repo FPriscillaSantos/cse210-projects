@@ -20,7 +20,7 @@ class Event
     public string DisplayStandardDetails()
     {
     
-        return $"{_title}, {_description} {_date} {_time}  {_address}";
+        return $"{_title}, \r\nDescription: {_description} \r\n{_date.ToShortDateString()} {_time.ToShortTimeString()}  \r\n{_address}";
 
     }
 
@@ -29,6 +29,6 @@ class Event
 
     public string DisplayShortDescription()
     {
-        return $"{_title}, {_date} \r\n{type}";
+        return $"{_title} \r\n{_date} \r\n{type}";
     }
 }

@@ -30,7 +30,7 @@ class Program
         Console.WriteLine("");
         reception2.DisplayFullDetails();
 
-        OutdoorGatherings outdoorGatherings3 = new OutdoorGatherings("Reception 2","descripition 2", DateTime.Today, DateTime.Now, "Another Road 5845, Texas, USA");
+        OutdoorGatherings outdoorGatherings3 = new OutdoorGatherings("OutdoorGatherings 3","descripition 3", DateTime.Today, DateTime.Now, "Rua João Mataraia 340, Ribeirão Preto, BRA");
         outdoorGatherings3.Weather = "Sunny";
         
         Console.WriteLine("");

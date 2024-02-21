@@ -23,6 +23,6 @@ class Lectures : Event
 
     public override void DisplayFullDetails() 
     {
-        Console.WriteLine ($"{_title}: {_description} \r\n{_speakerName} \r\n{_date}, {_time} \r\n {_address} Capacity: {_capacity}");
+        Console.WriteLine ($"{_title}: {_description} \r\nSpeaker: {_speakerName} \r\n{_date.ToShortDateString()}, {_time.ToShortTimeString()} \r\n{_address} Capacity: {_capacity}");
     }
 }
