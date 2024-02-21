@@ -6,10 +6,10 @@ class Event
     protected string _description;
     protected DateTime _time;
     protected DateTime _date;
-    protected Address _address;
+    protected string _address;
     protected string type;
 
-    public Event(string title, string description, DateTime date, DateTime time, Address address)
+    public Event(string title, string description, DateTime date, DateTime time, string address)
     {
         _title = title;
         _description = description;

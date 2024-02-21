@@ -3,7 +3,7 @@ class Lectures : Event
     private string _speakerName;
     private string _capacity;
     
-    public Lectures(string title, string description, DateTime date, DateTime time, Address address) 
+    public Lectures(string title, string description, DateTime date, DateTime time, string address) 
         : base(title, description, date, time, address)
     {
         type = "Lectures";
