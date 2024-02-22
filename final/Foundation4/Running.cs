@@ -1,4 +1,16 @@
-class Running
+class Running : Actvity
 {
-    
+    public Running(float distance, float speed, float pace) 
+        : base(distance, speed, pace)
+        {
+        }
+    public override void GetSpeed(float speed) 
+    {    
+    }
+    public override void GetDistance(float distance)
+    {    
+    }
+    public override void GetPace(float pace) 
+    {
+    }
 }
