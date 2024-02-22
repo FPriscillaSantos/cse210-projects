@@ -1,30 +1,26 @@
-using System.Diagnostics;
-
-class Actvity
+class Activity
 {
-    protected float _distance;
-    protected float _speed;
-    protected float _pace;
+    protected float _minutes;
 
-    public Activity(float distance, float speed, float pace)
+    public Activity(float minutes)
     {
-        _distance = distance;
-        _speed = speed;
-        _pace = pace;
+        _minutes = minutes;
     }
-    public void GetSummary()
+    public virtual string GetSummary()
     {
-
+        return "";
     }
-
-    public virtual void GetSpeed(float speed) 
+    public virtual float GetSpeed() 
     {    
+        return 0;
     }
-    public virtual void GetDistance(float distance)
+    public virtual float GetDistance()
     {    
+        return 0;
     }
-    public virtual void GetPace(float pace) 
+    public virtual float GetPace() 
     {
+        return 0;
     }
 
 }
